@@ -1,0 +1,10 @@
+﻿@page "{id}"
+@model razor_countries.Pages.Countries.TheCountryModel
+@{
+    var res = Json.Serialize(Model.Country).ToString();
+    res = res.Replace("{", "{<br>");
+    res = res.Replace("}", "<br>}");
+    res = res.Replace(",", ",<br>");
+}
+<pre>Model.Country</pre>
+@Html.Raw(res)

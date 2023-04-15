@@ -1,0 +1,26 @@
+﻿@model razor_countries.Entities.Country
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<form method="post" class="d-flex justify-content-between hover-light-grey">
+    <p>@Model.Name</p>
+
+    <div class="mx-2">
+        <a cals="px-3 mx-1 btn btn-light"
+           asp-area=""
+           asp-page="/Countries/TheCountry"
+           asp-route-id="@Model.Id">Open</a>
+        <a class="px-3 mx-1 btn btn-primary"
+           asp-page="/Countries/Edit"
+           asp-route-id="@Model.Id">Edit</a>
+       @* <a class="px-2 mx-2 btn btn-danger"
+           asp-page="/Countries/Delete"
+           asp-route-id="@Model.Id">
+            Delete
+        </a>*@
+        <button class="px-2 mx-2 btn btn-danger"
+                type="submit" asp-page-handler="delete" asp-route-id="@Model.Id">
+            delete
+        </button>
+
+    </div>
+</form>

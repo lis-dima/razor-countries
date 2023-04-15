@@ -1,0 +1,14 @@
+﻿@page
+@using razor_countries.Entities;
+@model razor_countries.Pages.Countries.IndexModel
+
+@{
+    var someCountry = new Country("Def");
+}
+
+
+Countries:
+@foreach (var country in Model.countries)
+{
+    @Html.Partial("Components/_CountryPreview", country)
+}

@@ -1,0 +1,12 @@
+﻿@page
+@model razor_countries.Pages.Countries.CreateModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+}
+
+<form method="post">
+    Name:
+    <input asp-for="Country!.Name" />
+    <input type="submit" />
+</form>
